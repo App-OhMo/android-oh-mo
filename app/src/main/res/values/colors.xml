@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- color 대표색상_앞 2자리 -->
 <resources>
     <color name="black">#000000</color>
     <color name="black_1a">#1a1a1a</color>
     <color name="white">#FFFFFF</color>
     <color name="blue_64">#64a0f1</color>
     <color name="grey_ae">#aeaeae</color>
+    <color name="grey_de">#dedede</color>
 </resources>
