@@ -1,24 +1,25 @@
 package oh.mo.presentation.home
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import oh.mo.R
+import oh.mo.databinding.FragmentHomeBinding
+import oh.mo.presentation.base.BaseFragment
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override val viewModel: HomeViewModel
+        get() = HomeViewModel()
+    override val layoutResourceId: Int
+        get() = R.layout.fragment_home
+
+    override fun initStartView() {
 
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    override fun initBinding() {
+
+    }
+
+    override fun initAfterBinding() {
+
     }
 }

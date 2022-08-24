@@ -1,242 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.home.HomeFragment">
-
-    <androidx.core.widget.NestedScrollView
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="oh.mo.presentation.home.HomeViewModel" />
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        tools:context=".presentation.home.HomeFragment">
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="26dp">
+
+                    <ImageView
+                        android:id="@+id/iv_home_recommendations_feed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/home_logo_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/font_pretendard_medium"
+                        android:text="@string/home_recommendations_feed"
+                        android:textColor="#1a1a1a"
+                        android:textSize="18sp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/iv_home_recommendations_feed"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_home_feed_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/home_filter_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="26dp">
+                android:layout_margin="12dp"
+                android:background="@drawable/background_home_weather_info"
+                android:orientation="horizontal"
+                android:paddingVertical="14dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="6dp"
+                app:layout_scrollFlags="scroll|enterAlways">
 
-                <ImageView
-                    android:id="@+id/iv_home_recommendations_feed"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/ll_home_current_info"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/home_logo_icon"
+                    android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="ContentDescription" />
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
+                    <TextView
+                        android:id="@+id/tv_home_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:fontFamily="@font/font_one_mobile_title"
+                        android:text="2022-06-12\n일요일"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_home_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:fontFamily="@font/font_one_mobile_title"
+                        android:text="경기도 용인시 수지구"
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_home_highest_temperature"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="4dp"
+                            android:fontFamily="@font/one_mobile_title"
+                            android:gravity="center"
+                            android:text="27"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:drawableStartCompat="@drawable/post_highest_temperature_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/one_mobile_title"
+                            android:gravity="center"
+                            android:text="℃"
+                            android:textColor="@color/white"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:id="@+id/tv_home_minimum_temperature"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="4dp"
+                            android:fontFamily="@font/one_mobile_title"
+                            android:gravity="center"
+                            android:text="20"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:drawableStartCompat="@drawable/post_minimum_temperature_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/one_mobile_title"
+                            android:gravity="center"
+                            android:text="℃"
+                            android:textColor="@color/white"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_home_current_temperature"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:fontFamily="@font/font_pretendard_medium"
-                    android:text="@string/home_recommendations_feed"
-                    android:textColor="#1a1a1a"
-                    android:textSize="18sp"
-                    android:textStyle="normal"
+                    android:layout_height="match_parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/iv_home_recommendations_feed"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintEnd_toStartOf="@id/iv_home_current_weather"
+                    app:layout_constraintStart_toEndOf="@id/ll_home_current_info"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_home_current_temperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/g_market_sans_bold"
+                        android:gravity="center"
+                        android:text="23"
+                        android:textColor="@color/white"
+                        android:textSize="56sp" />
+
+                    <TextView
+                        android:id="@+id/tv_home_celsius"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@+id/tv_home_current_temperature"
+                        android:layout_toEndOf="@id/tv_home_current_temperature"
+                        android:fontFamily="@font/one_mobile_title"
+                        android:gravity="center"
+                        android:text="℃"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
 
                 <ImageView
-                    android:id="@+id/iv_home_feed_filter"
+                    android:id="@+id/iv_home_current_weather"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/home_filter_icon"
+                    android:layout_marginEnd="6dp"
+                    android:src="@drawable/home_present_weather_graphic_suncloud"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="ContentDescription" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
+            <com.google.android.material.tabs.TabLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp" />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:tabSelectedTextColor="@color/blue_64"
+                app:tabTextAppearance="@style/home_tab_text_style"
+                app:tabTextColor="@color/grey_ae">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:background="@drawable/background_home_weather_info"
-            android:orientation="horizontal"
-            android:paddingVertical="14dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="6dp"
-            app:layout_scrollFlags="scroll|enterAlways">
-
-            <LinearLayout
-                android:id="@+id/ll_home_current_info"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:id="@+id/tv_home_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:fontFamily="@font/font_one_mobile_title"
-                    android:text="2022-06-12\n일요일"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/tv_home_location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="6dp"
-                    android:fontFamily="@font/font_one_mobile_title"
-                    android:text="경기도 용인시 수지구"
-                    android:textColor="@color/white"
-                    android:textSize="10sp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tv_home_highest_temperature"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="4dp"
-                        android:fontFamily="@font/one_mobile_title"
-                        android:gravity="center"
-                        android:text="27"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
-                        app:drawableStartCompat="@drawable/post_highest_temperature_icon" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginEnd="8dp"
-                        android:fontFamily="@font/one_mobile_title"
-                        android:gravity="center"
-                        android:text="℃"
-                        android:textColor="@color/white"
-                        android:textSize="10sp" />
-
-                    <TextView
-                        android:id="@+id/tv_home_minimum_temperature"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="4dp"
-                        android:fontFamily="@font/one_mobile_title"
-                        android:gravity="center"
-                        android:text="20"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
-                        app:drawableStartCompat="@drawable/post_minimum_temperature_icon" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginEnd="8dp"
-                        android:fontFamily="@font/one_mobile_title"
-                        android:gravity="center"
-                        android:text="℃"
-                        android:textColor="@color/white"
-                        android:textSize="10sp" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <RelativeLayout
-                android:id="@+id/rl_home_current_temperature"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/iv_home_current_weather"
-                app:layout_constraintStart_toEndOf="@id/ll_home_current_info"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:id="@+id/tv_home_current_temperature"
+                <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/g_market_sans_bold"
-                    android:gravity="center"
-                    android:text="23"
-                    android:textColor="@color/white"
-                    android:textSize="56sp" />
+                    android:icon="@drawable/selector_home_tab_icon"
+                    android:text="@string/home_sunny" />
 
-                <TextView
-                    android:id="@+id/tv_home_celsius"
+                <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_alignBottom="@+id/tv_home_current_temperature"
-                    android:layout_toEndOf="@id/tv_home_current_temperature"
-                    android:fontFamily="@font/one_mobile_title"
-                    android:gravity="center"
-                    android:text="℃"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
-            </RelativeLayout>
+                    android:icon="@drawable/home_cloudy_icon_unselected"
+                    android:text="@string/home_cloudy" />
 
-            <ImageView
-                android:id="@+id/iv_home_current_weather"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="6dp"
-                android:src="@drawable/home_present_weather_graphic_suncloud"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:icon="@drawable/home_rainy_icon_unselected"
+                    android:text="@string/home_rainy" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:tabSelectedTextColor="@color/blue_64"
-            app:tabTextAppearance="@style/home_tab_text_style"
-            app:tabTextColor="@color/grey_ae">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:icon="@drawable/selector_home_tab_icon"
-                android:text="@string/home_sunny" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:icon="@drawable/home_cloudy_icon_unselected"
-                android:text="@string/home_cloudy" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:icon="@drawable/home_rainy_icon_unselected"
-                android:text="@string/home_rainy" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:icon="@drawable/home_snowy_icon_unselected"
-                android:text="@string/home_snowy" />
-        </com.google.android.material.tabs.TabLayout>
-    </com.google.android.material.appbar.AppBarLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:icon="@drawable/home_snowy_icon_unselected"
+                    android:text="@string/home_snowy" />
+            </com.google.android.material.tabs.TabLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
