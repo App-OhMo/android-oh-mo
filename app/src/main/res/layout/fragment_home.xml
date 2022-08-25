@@ -141,21 +141,8 @@
                         android:layout_height="match_parent"
                         android:fontFamily="@font/g_market_sans_bold"
                         android:gravity="center"
-                        android:text="23"
                         android:textColor="@color/white"
                         android:textSize="56sp" />
-
-                    <TextView
-                        android:id="@+id/tv_home_celsius"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_alignBottom="@+id/tv_home_current_temperature"
-                        android:layout_toEndOf="@id/tv_home_current_temperature"
-                        android:fontFamily="@font/one_mobile_title"
-                        android:gravity="center"
-                        android:text="℃"
-                        android:textColor="@color/white"
-                        android:textSize="20sp" />
                 </RelativeLayout>
 
                 <ImageView

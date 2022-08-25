@@ -1,11 +1,14 @@
 package oh.mo.presentation.home
 
+import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.style.AbsoluteSizeSpan
 import androidx.recyclerview.widget.GridLayoutManager
 import oh.mo.R
 import oh.mo.databinding.FragmentHomeBinding
 import oh.mo.presentation.base.BaseFragment
 import java.time.LocalDate
-import java.util.*
+
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
@@ -25,6 +28,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun initAfterBinding() {
         setRecyclerView()
         setCurrentDate()
+        setCurrentTemperature()
     }
 
     private fun setRecyclerView() {
@@ -59,5 +63,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
                     currentTime.dayOfMonth.toString().padStart(2, '0'),
                     currentTime.dayOfWeek.toString()
                 )
+    }
+
+    private fun setCurrentTemperature() {
+        binding.tvHomeCurrentTemperature.text =
+            SpannableStringBuilder(resources.getString(R.string.home_current_temperature, 23))
+                .also {
+                    it.setSpan(AbsoluteSizeSpan(20, true),
+                        it.split("℃")[0].length,
+                        it.split("℃")[0].length + 1,
+                        Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                }
     }
 }
