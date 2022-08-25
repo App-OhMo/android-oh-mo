@@ -4,6 +4,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import oh.mo.R
 import oh.mo.databinding.FragmentHomeBinding
 import oh.mo.presentation.base.BaseFragment
+import java.time.LocalDate
+import java.util.*
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
@@ -22,6 +24,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override fun initAfterBinding() {
         setRecyclerView()
+        setCurrentDate()
     }
 
     private fun setRecyclerView() {
@@ -42,5 +45,19 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         (binding.rvHomeRecommendationsFeed.adapter as RecommendationsFeedAdapter)
             .differ
             .submitList(list)
+    }
+
+    private fun setCurrentDate() {
+        val currentTime: LocalDate = LocalDate.now()
+
+        binding.tvHomeDate.text =
+            resources
+                .getString(
+                    R.string.home_current_date,
+                    currentTime.year.toString(),
+                    currentTime.monthValue.toString().padStart(2, '0'),
+                    currentTime.dayOfMonth.toString().padStart(2, '0'),
+                    currentTime.dayOfWeek.toString()
+                )
     }
 }
