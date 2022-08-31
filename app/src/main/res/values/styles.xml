@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="home_tab_text_style">
+        <item name="android:fontFamily">@font/one_mobile_title</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>
