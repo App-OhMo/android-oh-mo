@@ -10,5 +10,7 @@
     
     <string name="celsius">℃</string>
     <string name="home_recommendations_feed">추천 피드</string>
+    <string name="home_current_date">%1$s-%2$s-%3$s\n%4$s</string>
+    <string name="home_current_temperature">%1$d℃</string>
 
 </resources>
