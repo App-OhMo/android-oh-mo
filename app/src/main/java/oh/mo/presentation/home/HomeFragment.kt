@@ -52,17 +52,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     }
 
     private fun setCurrentDate() {
-        val currentTime: LocalDate = LocalDate.now()
+        val currentTime = LocalDate.now()
 
-        binding.tvHomeDate.text =
-            resources
-                .getString(
-                    R.string.home_current_date,
-                    currentTime.year.toString(),
-                    currentTime.monthValue.toString().padStart(2, '0'),
-                    currentTime.dayOfMonth.toString().padStart(2, '0'),
-                    currentTime.dayOfWeek.toString()
-                )
+        binding.tvHomeDate.text = resources.getString(
+                R.string.home_current_date,
+                currentTime.year.toString(),
+                currentTime.monthValue.toString().padStart(2, '0'),
+                currentTime.dayOfMonth.toString().padStart(2, '0'),
+                currentTime.dayOfWeek.toString()
+            )
     }
 
     private fun setCurrentTemperature() {
