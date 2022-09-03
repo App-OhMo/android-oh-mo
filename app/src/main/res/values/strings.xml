@@ -13,5 +13,8 @@
 
     <!-- Search Fragment -->
     <string name="search_popular_category">인기 카테고리</string>
+    <string name="search_popular_keyword_up">▲</string>
+    <string name="search_popular_keyword_stay">─</string>
+    <string name="search_popular_keyword_down">▼</string>
 
 </resources>
