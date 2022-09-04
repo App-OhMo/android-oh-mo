@@ -4,8 +4,8 @@
     <color name="black">#000000</color>
     <color name="black_1a">#1a1a1a</color>
     <color name="white">#FFFFFF</color>
-    <color name="blue_64">#64a0f1</color>
-    <color name="grey_ae">#aeaeae</color>
-    <color name="grey_de">#dedede</color>
-    <color name="grey_fa">#fafafa</color>
+    <color name="Blue_64">#64a0f1</color>
+    <color name="Grey_ae">#aeaeae</color>
+    <color name="Grey_de">#dedede</color>
+    <color name="Blue_f2">#7BAEF2</color>
 </resources>
