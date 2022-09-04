@@ -17,6 +17,7 @@
     <string name="search_current_keyword_empty">
         최근 검색한 내용이 없습니다. 관심있는 검색어를 입력해보세요.
     </string>
+    <string name="search_keyword">\'%1$s\'로 검색한 결과입니다.</string>
     <string name="search_popular_keyword_up">▲</string>
     <string name="search_popular_keyword_stay">─</string>
     <string name="search_popular_keyword_down">▼</string>

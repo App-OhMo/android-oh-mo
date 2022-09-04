@@ -21,21 +21,8 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="\'키워드\'"
+            android:text="@string/search_keyword"
             app:layout_constraintTop_toTopOf="parent"/>
-
-
-        <TextView
-            android:id="@+id/tv_search_result_str"
-            android:layout_height="wrap_content"
-            android:text="로 검색한 결과입니다."
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:fontFamily="@font/pretendard_regular"
-            app:layout_constraintStart_toEndOf="@+id/tv_search_result_keyword"
-            app:layout_constraintTop_toTopOf="@+id/tv_search_result_keyword"
-            android:layout_width="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_search_result_keyword"/>
 
         <GridView
             android:layout_height="0dp"
