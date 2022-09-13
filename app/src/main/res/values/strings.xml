@@ -23,6 +23,8 @@
     <string name="search_popular_keyword_down">▼</string>
 
     <string name="home_current_date">%1$s-%2$s-%3$s\n%4$s</string>
-    <string name="home_current_temperature">%1$d℃</string>
+    <string name="home_current_temperature">%1$s℃</string>
+
+    <string name="asdf">%1$s 로 검색한 결과입니다.</string>
 
 </resources>
