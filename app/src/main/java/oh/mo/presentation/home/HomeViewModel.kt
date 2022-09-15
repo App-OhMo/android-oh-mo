@@ -1,6 +1,5 @@
 package oh.mo.presentation.home
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,21 +22,17 @@ class HomeViewModel @Inject constructor(
 
     fun getApi() {
         viewModelScope.launch {
-            Log.d("viewModel", serviceApi.toString())
-
             val response = serviceApi.getShortTermForecastResponse(
-                10,
+                290,
                 1,
                 "JSON",
-                "20220903",
-                "1700",
+                "20220914",
+                "2300",
                 55,
                 127
             )
 
             val value = response.response?.body?.items?.item
-
-            Log.d("viewModel", value.toString())
             _list.emit(value)
         }
     }
