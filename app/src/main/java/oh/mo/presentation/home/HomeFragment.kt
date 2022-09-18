@@ -69,8 +69,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     }
 
     private fun getApiResponse() {
-        viewModel.getApi()
-
+        viewModel.getApi(
+            currentTime.minusDays(1).format(
+                DateTimeFormatter
+                    .ofPattern("yyyyMMdd")
+                    .withLocale(Locale.KOREAN)
+            )
+        )
+        
         lifecycleScope.launchWhenStarted {
             viewModel.list.collect { list ->
                 setTemperature(
@@ -80,7 +86,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
                     }
                         ?.get(currentHour)
                         ?.fcstValue
-                        ?: "",
+                        ?: "--",
                     celsiusSize = 20
                 )
 
@@ -91,7 +97,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
                     }
                         ?.get(0)
                         ?.fcstValue
-                        ?: "",
+                        ?: "--",
                     celsiusSize = 10
                 )
 
@@ -102,7 +108,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
                     }
                         ?.get(0)
                         ?.fcstValue
-                        ?: "",
+                        ?: "--",
                     celsiusSize = 10
                 )
 

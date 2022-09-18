@@ -3,6 +3,7 @@ package oh.mo.presentation.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
@@ -20,20 +21,25 @@ class HomeViewModel @Inject constructor(
         MutableSharedFlow<List<ShortTermForecastResponse.Response.Body.Items.Item?>?>()
     val list = _list.asSharedFlow()
 
-    fun getApi() {
+    fun getApi(base_date: String) {
         viewModelScope.launch {
-            val response = serviceApi.getShortTermForecastResponse(
-                290,
-                1,
-                "JSON",
-                "20220914",
-                "2300",
-                55,
-                127
-            )
-
-            val value = response.response?.body?.items?.item
-            _list.emit(value)
+            runCatching {
+                serviceApi.getShortTermForecastResponse(
+                    num_of_rows = 290,
+                    page_no = 1,
+                    data_type = "JSON",
+                    base_date = base_date,
+                    base_time = "2300",
+                    nx = 55,
+                    ny = 127
+                )
+            }.onSuccess {
+                val value = it.response?.body?.items?.item
+                _list.emit(value)
+            }.onFailure {
+                delay(5000L)
+                getApi(base_date)
+            }
         }
     }
 }
