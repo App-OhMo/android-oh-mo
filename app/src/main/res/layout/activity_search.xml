@@ -18,7 +18,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/Blue_64">
+            android:background="@color/blue_64">
 
             <EditText
                 android:layout_width="0dp"
@@ -26,7 +26,7 @@
                 android:layout_weight="1"
                 android:textSize="14sp"
                 android:hint=" 검색"
-                android:drawableLeft="search_icon"
+                android:drawableLeft="@drawable/search_icon"
                 android:textColor="@color/black"
                 android:paddingStart="11dp"
                 android:layout_marginStart="24dp"

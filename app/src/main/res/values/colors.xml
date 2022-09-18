@@ -9,4 +9,8 @@
     <color name="blue_4e">#4e8cde</color>
     <color name="grey_ae">#aeaeae</color>
     <color name="grey_de">#dedede</color>
+    <color name="grey_fa">#fafafa</color>
+
+    <!-- 나연님 여기 수정해주세요 -->
+    <color name="blue_f2">#7BAEF2</color>
 </resources>

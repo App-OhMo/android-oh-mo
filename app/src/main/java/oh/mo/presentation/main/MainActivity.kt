@@ -1,12 +1,13 @@
 package oh.mo.presentation.main
 
+import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import dagger.hilt.android.AndroidEntryPoint
 import oh.mo.R
 import oh.mo.databinding.ActivityMainBinding
 import oh.mo.presentation.base.BaseActivity
-import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {

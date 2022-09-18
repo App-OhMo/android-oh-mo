@@ -18,7 +18,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/Blue_64">
+            android:background="@color/blue_64">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_popular_keyword"
@@ -309,7 +309,7 @@
             android:layout_height="wrap_content"
             android:text="전체삭제"
             android:textSize="12sp"
-            android:textColor="@color/Grey_ae"
+            android:textColor="@color/grey_ae"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fl_search_popular_category"
             android:layout_marginEnd="21dp"
@@ -322,7 +322,7 @@
             android:text="@string/search_current_keyword_empty"
             android:textSize="12sp"
             android:fontFamily="@font/pretendard_regular"
-            android:textColor="@color/Grey_ae"
+            android:textColor="@color/grey_ae"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/tv_search_current_keyword"
             app:layout_constraintTop_toBottomOf="@+id/tv_search_current_keyword"
