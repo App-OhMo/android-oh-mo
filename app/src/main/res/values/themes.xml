@@ -9,8 +9,14 @@
         <item name="colorSecondary">@color/black</item>
         <item name="colorSecondaryVariant">@color/black</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
     </style>
+
+    <style name="statusBarThemeBlue" parent="Theme.OhMo">
+        <item name="android:statusBarColor">@color/blue_64</item>
+    </style>
+
+    <style name="statusBarThemeWhite" parent="Theme.OhMo">
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
 </resources>

@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">OhMo</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- profile -->
+    <string name="profile_mod"><u>프로필 편집</u></string>
+    <string name="profile_post">게시물</string>
+    <string name="profile_today_weather">오늘의 날씨</string>
+    <string name="profile_subscribe">구독</string>
+
 </resources>
