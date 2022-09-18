@@ -1,13 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.profile.ProfileFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="profile" />
+        tools:context=".presentation.profile.ProfileFragment">
 
-</FrameLayout>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/profile_userprofile"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.04"
+                    app:layout_constraintWidth_percent="0.25"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/one_mobile_title"
+                    android:text="김길동"
+                    android:textColor="@color/black_1a"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@id/iv_profile"
+                    app:layout_constraintStart_toStartOf="@id/iv_profile"
+                    app:layout_constraintTop_toBottomOf="@id/iv_profile" />
+
+                <TextView
+                    android:id="@+id/tv_profile_mod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/profile_mod"
+                    android:textColor="@color/blue_4e"
+                    app:layout_constraintEnd_toEndOf="@id/iv_profile"
+                    app:layout_constraintStart_toStartOf="@id/iv_profile"
+                    app:layout_constraintTop_toBottomOf="@id/tv_profile_name" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_subscribe"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@color/blue_f4"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_percent="0.07"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_profile_mod"
+                    app:layout_constraintVertical_bias="0.05">
+
+                    <TextView
+                        android:id="@+id/tv_profile_post_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_medium"
+                        android:includeFontPadding="false"
+                        android:text="30"
+                        android:textColor="@color/black_1a"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toTopOf="@id/tv_profile_post"
+                        app:layout_constraintEnd_toStartOf="@id/tv_profile_sub_count"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+
+                    <TextView
+                        android:id="@+id/tv_profile_post"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/profile_post"
+                        android:textColor="@color/black_1a"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/tv_profile_post_count"
+                        app:layout_constraintStart_toStartOf="@id/tv_profile_post_count"
+                        app:layout_constraintTop_toBottomOf="@id/tv_profile_post_count" />
+
+
+                    <TextView
+                        android:id="@+id/tv_profile_sub_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_medium"
+                        android:includeFontPadding="false"
+                        android:text="150"
+                        android:textColor="@color/black_1a"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_profile_post_count"
+                        app:layout_constraintTop_toTopOf="@id/tv_profile_post_count" />
+
+
+                    <TextView
+                        android:id="@+id/tv_profile_sub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_medium"
+                        android:includeFontPadding="false"
+                        android:text="@string/profile_subscribe"
+                        android:textColor="@color/black_1a"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@id/tv_profile_sub_count"
+                        app:layout_constraintStart_toStartOf="@id/tv_profile_sub_count"
+                        app:layout_constraintTop_toTopOf="@id/tv_profile_post" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <ImageView
+                    android:id="@+id/iv_profile_logo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:src="@drawable/home_logo_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.05"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_subscribe"
+                    app:layout_constraintWidth_percent="0.08"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_profile_today_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/profile_today_weather"
+                    android:textColor="@color/black_1a"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_profile_logo"
+                    app:layout_constraintStart_toEndOf="@id/iv_profile_logo"
+                    app:layout_constraintTop_toTopOf="@id/iv_profile_logo" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_profile_today_weather"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_profile_today_weather"
+                    tools:listitem="@layout/item_photo_small" />
+
+                <TextView
+                    android:id="@+id/tv_profile_post_big"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:text="@string/profile_post"
+                    android:textColor="@color/black_1a"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/iv_profile_logo"
+                    app:layout_constraintTop_toBottomOf="@id/rcv_profile_today_weather" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_profile_post"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.487"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_profile_post_big"
+                    app:layout_constraintWidth_percent="0.9"
+                    app:spanCount="2"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/item_photo_big" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

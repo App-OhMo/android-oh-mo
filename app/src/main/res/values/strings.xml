@@ -1,13 +1,20 @@
 <resources>
     <string name="app_name">OhMo</string>
+
+    <!-- profile -->
+    <string name="profile_mod"><u>프로필 편집</u></string>
+    <string name="profile_post">게시물</string>
+    <string name="profile_today_weather">오늘의 날씨</string>
+    <string name="profile_subscribe">구독</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    
+
     <!-- Home Fragment -->
     <string name="home_sunny">맑음</string>
     <string name="home_cloudy">흐림</string>
     <string name="home_rainy">비</string>
     <string name="home_snowy">눈</string>
-    
+
     <string name="celsius">℃</string>
     <string name="home_recommendations_feed">추천 피드</string>
 
