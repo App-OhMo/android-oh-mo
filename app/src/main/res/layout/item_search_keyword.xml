@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:text="삭제"
         android:textSize="12sp"
-        android:textColor="@color/Grey_ae"
+        android:textColor="@color/grey_ae"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>

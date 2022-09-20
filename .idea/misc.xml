@@ -3,12 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/drawable/background_home_weather_info.xml" value="0.246" />
+        <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/drawable/background_search_category.xml" value="0.11" />
+        <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/drawable/menu_selector.xml" value="0.1" />
         <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/font/font_one_mobile_title.xml" value="0.3411458333333333" />
         <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/font/font_otfs.xml" value="0.4088541666666667" />
         <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/font/font_pretendard_medium.xml" value="0.3421875" />
         <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/font/font_pretendard_regular.xml" value="0.3411458333333333" />
         <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/layout/activity_main.xml" value="0.3796875" />
-        <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/layout/fragment_home.xml" value="0.3796875" />
+        <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/layout/activity_search.xml" value="0.1921875" />
+        <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/layout/fragment_home.xml" value="0.36099585062240663" />
+        <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/layout/fragment_notification.xml" value="0.1921875" />
+        <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/layout/fragment_profile.xml" value="0.1921875" />
+        <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/layout/fragment_search.xml" value="0.1921875" />
+        <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/layout/item_recommendations_feed.xml" value="0.125" />
         <entry key="..\:/work/ToyProject/OhMo/app/src/main/res/drawable/background_home_weather_info.xml" value="0.1225" />
         <entry key="..\:/work/ToyProject/OhMo/app/src/main/res/drawable/background_search_category.xml" value="0.1615" />
         <entry key="..\:/work/ToyProject/OhMo/app/src/main/res/drawable/background_search_edit_text.xml" value="0.1075" />
@@ -39,5 +47,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.3164179104477612" />
+      </ProjectState>
+    </option>
   </component>
 </project>
