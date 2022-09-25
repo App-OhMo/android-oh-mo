@@ -13,10 +13,6 @@
 
     <style name="statusBarThemeBlue" parent="Theme.OhMo">
         <item name="android:statusBarColor">@color/blue_64</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
-
-    <style name="statusBarThemeWhite" parent="Theme.OhMo">
-        <item name="android:statusBarColor">@color/white</item>
-    </style>
-
 </resources>

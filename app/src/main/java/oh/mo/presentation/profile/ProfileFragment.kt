@@ -39,6 +39,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding, ProfileViewModel>()
             R.drawable.ic_launcher_background,
             R.drawable.ic_launcher_background,
             R.drawable.ic_launcher_background,
+            R.drawable.ic_launcher_background,
             R.drawable.ic_launcher_background
         )
 
