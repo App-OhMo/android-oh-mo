@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- color 대표색상_앞 2자리 -->
+<?xml version="1.0" encoding="utf-8"?><!-- color 대표색상_앞 2자리 -->
 <resources>
     <color name="black">#000000</color>
     <color name="black_1a">#1a1a1a</color>
@@ -7,10 +6,8 @@
     <color name="blue_64">#64a0f1</color>
     <color name="blue_f4">#f4f8ff</color>
     <color name="blue_4e">#4e8cde</color>
+    <color name="blue_7b">#7BAEF2</color>
+    <color name="grey_fa">#fafafa</color>
     <color name="grey_ae">#aeaeae</color>
     <color name="grey_de">#dedede</color>
-    <color name="grey_fa">#fafafa</color>
-
-    <!-- 나연님 여기 수정해주세요 -->
-    <color name="blue_f2">#7BAEF2</color>
 </resources>

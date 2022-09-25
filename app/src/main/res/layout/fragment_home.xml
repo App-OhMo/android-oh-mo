@@ -58,7 +58,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
                         android:fontFamily="@font/font_one_mobile_title"
-                        android:text="2022-06-12\n일요일"
                         android:textColor="@color/white"
                         android:textSize="16sp" />
 
@@ -81,24 +80,14 @@
                             android:id="@+id/tv_home_highest_temperature"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
                             android:drawablePadding="4dp"
                             android:fontFamily="@font/one_mobile_title"
                             android:gravity="center"
-                            android:text="27"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             app:drawableStartCompat="@drawable/post_highest_temperature_icon" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginEnd="8dp"
-                            android:fontFamily="@font/one_mobile_title"
-                            android:gravity="center"
-                            android:text="℃"
-                            android:textColor="@color/white"
-                            android:textSize="10sp" />
 
                         <TextView
                             android:id="@+id/tv_home_minimum_temperature"
@@ -107,21 +96,9 @@
                             android:drawablePadding="4dp"
                             android:fontFamily="@font/one_mobile_title"
                             android:gravity="center"
-                            android:text="20"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             app:drawableStartCompat="@drawable/post_minimum_temperature_icon" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginEnd="8dp"
-                            android:fontFamily="@font/one_mobile_title"
-                            android:gravity="center"
-                            android:text="℃"
-                            android:textColor="@color/white"
-                            android:textSize="10sp" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -157,6 +134,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tl_home_filter_tab"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_scrollFlags="scroll|enterAlways"
