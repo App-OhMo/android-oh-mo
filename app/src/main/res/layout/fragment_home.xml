@@ -58,6 +58,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
                         android:fontFamily="@font/font_one_mobile_title"
+                        android:includeFontPadding="false"
                         android:textColor="@color/white"
                         android:textSize="16sp" />
 
@@ -67,6 +68,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="6dp"
                         android:fontFamily="@font/font_one_mobile_title"
+                        android:includeFontPadding="false"
                         android:text="경기도 용인시 수지구"
                         android:textColor="@color/white"
                         android:textSize="10sp" />
@@ -84,6 +86,7 @@
                             android:drawablePadding="4dp"
                             android:fontFamily="@font/one_mobile_title"
                             android:gravity="center"
+                            android:includeFontPadding="false"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             app:drawableStartCompat="@drawable/post_highest_temperature_icon" />
@@ -96,6 +99,7 @@
                             android:drawablePadding="4dp"
                             android:fontFamily="@font/one_mobile_title"
                             android:gravity="center"
+                            android:includeFontPadding="false"
                             android:textColor="@color/white"
                             android:textSize="12sp"
                             app:drawableStartCompat="@drawable/post_minimum_temperature_icon" />
@@ -118,6 +122,7 @@
                         android:layout_height="match_parent"
                         android:fontFamily="@font/g_market_sans_bold"
                         android:gravity="center"
+                        android:includeFontPadding="false"
                         android:textColor="@color/white"
                         android:textSize="56sp" />
                 </RelativeLayout>
@@ -190,6 +195,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:fontFamily="@font/font_pretendard_medium"
+                    android:includeFontPadding="false"
                     android:text="@string/home_recommendations_feed"
                     android:textColor="@color/black_1a"
                     android:textSize="18sp"
