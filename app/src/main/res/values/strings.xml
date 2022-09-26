@@ -8,7 +8,12 @@
     <string name="signin">로그인</string>
     <string name="signup">회원가입</string>
 
-    
+    <!-- SignIn Fragment -->
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="password_search"><u>비밀번호를 잊으셨나요?</u></string>
+
+
     <!-- Home Fragment -->
     <string name="home_sunny">맑음</string>
     <string name="home_cloudy">흐림</string>
