@@ -1,4 +1,4 @@
-package oh.mo.di
+package oh.mo
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

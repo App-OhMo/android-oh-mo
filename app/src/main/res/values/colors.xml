@@ -4,8 +4,10 @@
     <color name="black_1a">#1a1a1a</color>
     <color name="white">#FFFFFF</color>
     <color name="blue_64">#64a0f1</color>
-    <color name="grey_ae">#aeaeae</color>
-    <color name="grey_de">#dedede</color>
+    <color name="blue_f4">#f4f8ff</color>
+    <color name="blue_4e">#4e8cde</color>
     <color name="blue_7b">#7BAEF2</color>
     <color name="grey_fa">#fafafa</color>
+    <color name="grey_ae">#aeaeae</color>
+    <color name="grey_de">#dedede</color>
 </resources>
