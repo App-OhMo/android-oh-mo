@@ -13,10 +13,15 @@
     <string name="password">비밀번호</string>
     <string name="password_search"><u>비밀번호를 잊으셨나요?</u></string>
 
-    <!-- SignIn Fragment -->
+    <!-- SignUp Fragment -->
     <string name="nickname">닉네임</string>
     <string name="duplicate_check"><u>중복확인</u></string>
     <string name="password_rules">비밀번호는 영문, 숫자(특수문자 포함) 8자 이상으로 설정 가능합니다.</string>
+    
+    <!-- PasswordAssistance Fragment -->
+    <string name="password_assistance_title">등록된 이메일로 찾기</string>
+    <string name="password_assistance_description">가입 당시 입력한 이메일을 통해 인증 후 새로운 비밀번호를 등록해주세요.</string>
+    <string name="send_verification_code">인증번호 전송</string>
 
     <!-- Home Fragment -->
     <string name="home_sunny">맑음</string>
