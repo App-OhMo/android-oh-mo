@@ -1,28 +1,23 @@
 package oh.mo.presentation.base
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.ViewModel
+import androidx.viewbinding.ViewBinding
 
-abstract class BaseActivity<T : ViewDataBinding, VM : ViewModel> : AppCompatActivity() {
-    lateinit var binding: T
-    abstract val viewModel: VM
-    abstract val layoutResourceId: Int
-
-    abstract fun initStartView()
-    abstract fun initBinding()
-    abstract fun initAfterBinding()
+abstract class BaseActivity<B : ViewBinding>(val bindingFactory: (LayoutInflater) -> B) :
+    AppCompatActivity() {
+    private var _binding: B? = null
+    val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, layoutResourceId)
+        _binding = bindingFactory(layoutInflater)
+        setContentView(binding.root)
+    }
 
-        binding.lifecycleOwner = this
-
-        initStartView()
-        initBinding()
-        initAfterBinding()
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

@@ -1,5 +1,6 @@
 package oh.mo.presentation.main
 
+import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.navigation.fragment.findNavController
@@ -10,18 +11,16 @@ import oh.mo.databinding.ActivityMainBinding
 import oh.mo.presentation.base.BaseActivity
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
-    override val viewModel: MainViewModel by viewModels()
-    override val layoutResourceId: Int = R.layout.activity_main
+class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inflate(it)}) {
+    private val viewModel: MainViewModel by viewModels()
 
-    override fun initStartView() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
         setBottomNavigation()
         setTheme(R.style.statusBarThemeBlue)
     }
 
-    override fun initBinding() {}
-
-    override fun initAfterBinding() {}
 
     private fun setBottomNavigation() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fm_main_nav_host)

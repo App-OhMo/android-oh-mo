@@ -1,9 +1,13 @@
 package oh.mo.presentation.home
 
+import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.text.Spanned
 import android.text.style.AbsoluteSizeSpan
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -17,24 +21,21 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
-
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private val currentTime = LocalDateTime.now()
     private val currentHour = currentTime.format(DateTimeFormatter.ofPattern("HH")).toInt()
 
-    override val viewModel: HomeViewModel by viewModels()
-    override val layoutResourceId: Int
-        get() = R.layout.fragment_home
+    private val viewModel: HomeViewModel by viewModels()
 
-    override fun initStartView() {
-
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentHomeBinding {
+        return FragmentHomeBinding.inflate(inflater, container, false)
     }
 
-    override fun initBinding() {
-
-    }
-
-    override fun initAfterBinding() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         setRecyclerView()
         setCurrentDate()
         getApiResponse()
