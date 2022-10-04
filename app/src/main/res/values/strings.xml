@@ -17,6 +17,10 @@
     <string name="password">비밀번호</string>
     <string name="password_search"><u>비밀번호를 잊으셨나요?</u></string>
 
+    <!-- SignIn Fragment -->
+    <string name="nickname">닉네임</string>
+    <string name="duplicate_check"><u>중복확인</u></string>
+    <string name="password_rules">비밀번호는 영문, 숫자(특수문자 포함) 8자 이상으로 설정 가능합니다.</string>
 
     <!-- Home Fragment -->
     <string name="home_sunny">맑음</string>
