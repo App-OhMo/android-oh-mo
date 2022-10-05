@@ -3,7 +3,6 @@ package oh.mo.presentation.signup
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import oh.mo.R
 import oh.mo.databinding.FragmentSignUpBinding
 import oh.mo.presentation.base.BaseFragment
 
