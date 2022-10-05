@@ -1,18 +1,20 @@
 package oh.mo.presentation.password
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import oh.mo.R
 import oh.mo.databinding.FragmentPasswordResetBinding
 import oh.mo.presentation.base.BaseFragment
 
-class PasswordResetFragment : BaseFragment<FragmentPasswordResetBinding,PasswordResetViewModel>() {
+class PasswordResetFragment : BaseFragment<FragmentPasswordResetBinding>() {
 
-    override val viewModel: PasswordResetViewModel by viewModels()
-    override val layoutResourceId: Int
-        get() = R.layout.fragment_password_reset
+    private val viewModel: PasswordResetViewModel by viewModels()
 
-    override fun initStartView() {}
-    override fun initBinding() {}
-    override fun initAfterBinding() {}
-
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+    ): FragmentPasswordResetBinding {
+        return FragmentPasswordResetBinding.inflate(inflater, container, false)
+    }
 }

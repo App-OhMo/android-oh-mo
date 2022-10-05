@@ -1,18 +1,19 @@
 package oh.mo.presentation.signup
 
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import oh.mo.R
 import oh.mo.databinding.FragmentSignUpBinding
 import oh.mo.presentation.base.BaseFragment
 
-class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>() {
+class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
 
-    override val viewModel: SignUpViewModel by viewModels()
-    override val layoutResourceId: Int
-        get() = R.layout.fragment_sign_up
-
-    override fun initStartView() {}
-    override fun initBinding() {}
-    override fun initAfterBinding() {}
-
+    private val viewModel: SignUpViewModel by viewModels()
+    override fun getFragmentBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+    ): FragmentSignUpBinding {
+        return FragmentSignUpBinding.inflate(inflater, container, false)
+    }
 }
