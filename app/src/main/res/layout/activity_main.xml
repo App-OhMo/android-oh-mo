@@ -24,7 +24,26 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:title="오늘의 날씨"
             app:titleCentered="true"
-            app:titleTextColor="@color/white" />
+            app:titleTextColor="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_home_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:src="@drawable/home_search_icon"
+                android:layout_marginEnd="26dp"/>
+
+            <ImageView
+                android:id="@+id/iv_home_posting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home_posting_icon"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"/>
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fm_main_nav_host"
