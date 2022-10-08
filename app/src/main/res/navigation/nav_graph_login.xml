@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_login"
+    app:startDestination="@id/fragment_start">
+
+    <fragment
+        android:id="@+id/fragment_start"
+        android:name="oh.mo.presentation.start.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_login_to_signin"
+            app:destination="@id/fragment_signin" />
+        <action
+            android:id="@+id/action_login_to_signup"
+            app:destination="@id/fragment_signup" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_signin"
+        android:name="oh.mo.presentation.signin.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signin_to_password_assistance"
+            app:destination="@id/fragment_password_assistance" />
+        <action
+            android:id="@+id/action_signin_to_main"
+            app:destination="@id/activity_main" />
+    </fragment>
+    <fragment
+
+        android:id="@+id/fragment_signup"
+        android:name="oh.mo.presentation.signup.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+
+    <activity
+        android:id="@+id/activity_main"
+        android:name="oh.mo.presentation.main.MainActivity"
+        android:label="MainActivity" />
+
+    <fragment
+        android:id="@+id/fragment_password_assistance"
+        android:name="oh.mo.presentation.password.PasswordAssistanceFragment"
+        android:label="fragment_password_assistance"
+        tools:layout="@layout/fragment_password_assistance" >
+        <action
+            android:id="@+id/action_password_assistance_to_password_reset"
+            app:destination="@id/fragment_password_reset" />
+    </fragment>
+    <fragment
+
+        android:id="@+id/fragment_password_reset"
+        android:name="oh.mo.presentation.password.PasswordResetFragment"
+        android:label="fragment_password_reset"
+        tools:layout="@layout/fragment_password_reset" />
+</navigation>

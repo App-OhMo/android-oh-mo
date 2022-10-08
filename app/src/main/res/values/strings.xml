@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">OhMo</string>
+    <string name="app_name">오모</string>
+    <string name="splash_text">오늘 뭐 입지?</string>
 
     <!-- profile -->
     <string name="profile_mod"><u>프로필 편집</u></string>
@@ -7,14 +8,37 @@
     <string name="profile_today_weather">오늘의 날씨</string>
     <string name="profile_subscribe">구독</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Start Fragment -->
+    <string name="signin">로그인</string>
+    <string name="signup">회원가입</string>
+
+    <!-- SignIn Fragment -->
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="password_search"><u>비밀번호를 잊으셨나요?</u></string>
+
+    <!-- SignUp Fragment -->
+    <string name="nickname">닉네임</string>
+    <string name="duplicate_check"><u>중복확인</u></string>
+    <string name="password_rules">비밀번호는 영문, 숫자(특수문자 포함) 8자 이상으로 설정 가능합니다.</string>
+
+    <!-- PasswordAssistance Fragment -->
+    <string name="password_assistance_title">등록된 이메일로 찾기</string>
+    <string name="password_assistance_description">가입 당시 입력한 이메일을 통해 인증 후 새로운 비밀번호를 등록해주세요.</string>
+    <string name="send_verification_code">인증번호 전송</string>
+
+    <!-- PasswordReset Fragment -->
+    <string name="password_reset_title">비밀번호 재설정</string>
+    <string name="password_reset_description">비밀번호는 영문, 숫자 (특수문자 포함) 8자 이상으로 설정 가능합니다.</string>
+    <string name="new_password_input">새 비밀번호 입력</string>
+    <string name="new_password_confirm">비밀번호 확인</string>
 
     <!-- Home Fragment -->
     <string name="home_sunny">맑음</string>
     <string name="home_cloudy">흐림</string>
     <string name="home_rainy">비</string>
     <string name="home_snowy">눈</string>
-
+    
     <string name="celsius">℃</string>
     <string name="home_recommendations_feed">추천 피드</string>
 
