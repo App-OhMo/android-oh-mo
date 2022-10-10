@@ -16,6 +16,7 @@
     <string name="email">이메일</string>
     <string name="password">비밀번호</string>
     <string name="password_search"><u>비밀번호를 잊으셨나요?</u></string>
+    <string name="wrong_email_format">서식에 맞지 않는 이메일입니다.</string>
 
     <!-- SignUp Fragment -->
     <string name="nickname">닉네임</string>

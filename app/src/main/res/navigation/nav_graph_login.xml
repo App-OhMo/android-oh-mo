@@ -52,7 +52,6 @@
             app:destination="@id/fragment_password_reset" />
     </fragment>
     <fragment
-
         android:id="@+id/fragment_password_reset"
         android:name="oh.mo.presentation.password.PasswordResetFragment"
         android:label="fragment_password_reset"
