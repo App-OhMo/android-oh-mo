@@ -1,6 +1,5 @@
 package oh.mo.presentation.password
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -15,7 +14,6 @@ class PasswordAssistanceViewModel : ViewModel() {
     fun setBtnEnabled(isNickNameValid: Boolean, isEmailValid: Boolean) {
         viewModelScope.launch {
             _isBtnEnabled.emit(listOf(isNickNameValid, isEmailValid))
-            Log.d("test", isNickNameValid.toString() + isEmailValid)
         }
     }
 }

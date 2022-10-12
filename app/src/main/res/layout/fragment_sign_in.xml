@@ -59,6 +59,7 @@
         android:id="@+id/tv_signin_wrong_email_format"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
         android:fontFamily="@font/font_pretendard_regular"
         android:includeFontPadding="false"
         android:text="@string/wrong_email_format"

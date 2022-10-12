@@ -29,6 +29,8 @@
     <string name="send_verification_code">인증번호 전송</string>
     <string name="verification_code">인증번호</string>
     <string name="next">다음</string>
+    <string name="wrong_password_format">서식에 맞지 않는 비밀번호입니다.</string>
+    <string name="password_not_matching">비밀번호가 일치하지 않습니다.</string>
 
     <!-- PasswordReset Fragment -->
     <string name="password_reset_title">비밀번호 재설정</string>
