@@ -19,7 +19,6 @@ class SignUpViewModel : ViewModel() {
     ) {
         viewModelScope.launch {
             _isBtnEnabled.emit(listOf(isNicknameValid, isPasswordValid, isEmailValid))
-            Log.d("test", isNicknameValid.toString() + isPasswordValid + isEmailValid)
         }
     }
 }
