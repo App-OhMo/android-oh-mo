@@ -11,13 +11,7 @@ class SignInViewModel : ViewModel() {
     private val _isBtnEnabled = MutableSharedFlow<List<Boolean>>()
     val isBtnEnabled = _isBtnEnabled.asSharedFlow()
 
-    fun letEmailValid(isEmailValid: Boolean, isPasswordValid: Boolean) {
-        viewModelScope.launch {
-            _isBtnEnabled.emit(listOf(isEmailValid, isPasswordValid))
-        }
-    }
-
-    fun letPasswordValid(isEmailValid: Boolean, isPasswordValid: Boolean) {
+    fun setBtnEnabled(isEmailValid: Boolean, isPasswordValid: Boolean) {
         viewModelScope.launch {
             _isBtnEnabled.emit(listOf(isEmailValid, isPasswordValid))
         }

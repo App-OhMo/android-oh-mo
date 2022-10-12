@@ -77,11 +77,11 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
                             ) {
                                 tvSigninWrongEmailFormat.visibility = View.GONE
                                 isEmailValid = true
-                                viewModel.letEmailValid(isEmailValid, isPasswordValid)
+                                viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
                             } else {
                                 tvSigninWrongEmailFormat.visibility = View.VISIBLE
                                 isEmailValid = false
-                                viewModel.letEmailValid(isEmailValid, isPasswordValid)
+                                viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
                             }
                         }
                     }
@@ -91,10 +91,10 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
                     .onEach {
                         if (it?.length!! == 0) {
                             isPasswordValid = false
-                            viewModel.letPasswordValid(isEmailValid, isPasswordValid)
+                            viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
                         } else {
                             isPasswordValid = true
-                            viewModel.letPasswordValid(isEmailValid, isPasswordValid)
+                            viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
                         }
                     }
                     .launchIn(this)
