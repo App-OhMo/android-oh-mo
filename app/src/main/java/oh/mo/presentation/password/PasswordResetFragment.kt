@@ -8,12 +8,13 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import oh.mo.R
 import oh.mo.databinding.FragmentPasswordResetBinding
 import oh.mo.presentation.base.BaseFragment
@@ -39,6 +40,7 @@ class PasswordResetFragment : BaseFragment<FragmentPasswordResetBinding>() {
         initFunctions()
     }
 
+    @OptIn(FlowPreview::class)
     private fun initFunctions() {
         binding.apply {
             tvPasswordReset.isEnabled = false
