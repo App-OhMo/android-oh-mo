@@ -29,9 +29,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
 
     private fun setBottomNavigation() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fm_main_nav_host)
-        navController = navHostFragment?.findNavController() ?: throw NullPointerException()
-        binding.navBar.setupWithNavController((navController))
-
+        val navController = navHostFragment?.findNavController() ?: throw NullPointerException()
+        binding.navBar.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, dest, _ ->
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);

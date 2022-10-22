@@ -16,6 +16,7 @@
     <string name="email">이메일</string>
     <string name="password">비밀번호</string>
     <string name="password_search"><u>비밀번호를 잊으셨나요?</u></string>
+    <string name="wrong_email_format">서식에 맞지 않는 이메일입니다.</string>
 
     <!-- SignUp Fragment -->
     <string name="nickname">닉네임</string>
@@ -26,6 +27,10 @@
     <string name="password_assistance_title">등록된 이메일로 찾기</string>
     <string name="password_assistance_description">가입 당시 입력한 이메일을 통해 인증 후 새로운 비밀번호를 등록해주세요.</string>
     <string name="send_verification_code">인증번호 전송</string>
+    <string name="verification_code">인증번호</string>
+    <string name="next">다음</string>
+    <string name="wrong_password_format">서식에 맞지 않는 비밀번호입니다.</string>
+    <string name="password_not_matching">비밀번호가 일치하지 않습니다.</string>
 
     <!-- PasswordReset Fragment -->
     <string name="password_reset_title">비밀번호 재설정</string>
