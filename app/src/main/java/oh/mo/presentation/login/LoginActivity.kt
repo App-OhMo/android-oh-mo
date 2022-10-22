@@ -1,20 +1,24 @@
 package oh.mo.presentation.login
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import oh.mo.R
 import oh.mo.databinding.ActivityLoginBinding
 import oh.mo.presentation.base.BaseActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>({ ActivityLoginBinding.inflate(it) }) {
     private val viewModel: LoginViewModel by viewModels()
+    lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         initFunctions()
     }
 
@@ -25,7 +29,22 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>({ ActivityLoginBinding.
         }
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fm_login_nav_host)
-        val navController = navHostFragment?.findNavController()
-        setupActionBarWithNavController(navController ?: throw NullPointerException())
+        val navController = navHostFragment?.findNavController() ?: throw NullPointerException()
+
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+
+        binding.tbLogin.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, dest, _ ->
+            if (dest.id != R.id.fragment_start) {
+                binding.tbLogin.setNavigationIcon(R.drawable.back_icon)
+            }
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.fm_login_nav_host)
+        return navController.navigateUp(appBarConfiguration) || super.onNavigateUp()
     }
 }
