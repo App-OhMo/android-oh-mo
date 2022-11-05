@@ -29,7 +29,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
 
     private fun setBottomNavigation() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fm_main_nav_host)
-        val navController = navHostFragment?.findNavController() ?: throw NullPointerException()
+        navController = navHostFragment?.findNavController() ?: throw NullPointerException()
         binding.navBar.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, dest, _ ->
