@@ -42,6 +42,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
                         setTitleTextColor(resources.getColor(R.color.black_1a))
                         setBackgroundColor(resources.getColor(R.color.white))
                         binding.tbMain.visibility = View.VISIBLE
+                        binding.navBar.visibility = View.VISIBLE
                     }
                 }
                 R.id.fragment_home -> {
@@ -51,6 +52,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
                         setTitleTextColor(resources.getColor(R.color.white))
                         setBackgroundColor(resources.getColor(R.color.blue_64))
                         binding.tbMain.visibility = View.VISIBLE
+                        binding.navBar.visibility = View.VISIBLE
                     }
                 }
             }
@@ -61,6 +63,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
         binding.ivHomeSearch.setOnClickListener{
             navController.navigate(R.id.action_home_to_search)
             binding.tbMain.visibility = View.GONE
+            binding.navBar.visibility = View.GONE
         }
 
         binding.ivHomePosting.setOnClickListener() {
