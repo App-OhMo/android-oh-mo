@@ -10,12 +10,15 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingVertical="56dp">
 
             <ImageView
                 android:id="@+id/iv_signup_logo"
@@ -80,6 +83,17 @@
                 tools:ignore="LabelFor" />
 
             <TextView
+                android:id="@+id/tv_signup_nickname_validation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/font_pretendard_regular"
+                android:includeFontPadding="false"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/et_signup_nickname"
+                app:layout_constraintTop_toBottomOf="@id/et_signup_nickname" />
+
+            <TextView
                 android:id="@+id/tv_signup_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,7 +103,7 @@
                 android:textColor="@color/black_1a"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_signup_nickname" />
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_nickname_validation" />
 
             <EditText
                 android:id="@+id/et_signup_password"
@@ -117,6 +131,20 @@
                 app:layout_constraintTop_toBottomOf="@id/et_signup_password" />
 
             <TextView
+                android:id="@+id/tv_signup_password_validation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/font_pretendard_regular"
+                android:includeFontPadding="false"
+                android:text="@string/password_validation"
+                android:textColor="@color/red_f5"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/tv_signup_password_rules"
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_password_rules" />
+
+            <TextView
                 android:id="@+id/tv_signup_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -126,7 +154,7 @@
                 android:textColor="@color/black_1a"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_signup_password_rules" />
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_password_validation" />
 
             <TextView
                 android:id="@+id/tv_signup_email_duplicate_check"
@@ -157,10 +185,22 @@
                 tools:ignore="LabelFor" />
 
             <TextView
+                android:id="@+id/tv_signup_email_validation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/font_pretendard_regular"
+                android:includeFontPadding="false"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/et_signup_email"
+                app:layout_constraintTop_toBottomOf="@id/et_signup_email" />
+
+
+            <TextView
                 android:id="@+id/tv_signup"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="56dp"
+                android:layout_margin="56dp"
                 android:background="@drawable/background_sign_in_text"
                 android:fontFamily="@font/font_pretendard_regular"
                 android:gravity="center"
@@ -171,7 +211,7 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_signup_email" />
+                app:layout_constraintTop_toBottomOf="@id/tv_signup_email_validation" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

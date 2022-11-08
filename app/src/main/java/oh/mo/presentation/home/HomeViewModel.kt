@@ -7,14 +7,14 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
-import oh.mo.data.api.ServiceApi
-import oh.mo.data.model.ShortTermForecastResponse
+import oh.mo.data.api.ShortWeatherApi
+import oh.mo.data.model.remote.response.ShortTermForecastResponse
 import oh.mo.di.NetworkModule
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    @NetworkModule.ApiRetrofit private val serviceApi: ServiceApi,
+    @NetworkModule.ShortWeatherApiRetrofit private val shortWeatherApi: ShortWeatherApi,
 ) : ViewModel() {
 
     private val _list =
@@ -24,7 +24,7 @@ class HomeViewModel @Inject constructor(
     fun getApi(base_date: String) {
         viewModelScope.launch {
             runCatching {
-                serviceApi.getShortTermForecastResponse(
+                shortWeatherApi.getShortTermForecastResponse(
                     num_of_rows = 290,
                     page_no = 1,
                     data_type = "JSON",

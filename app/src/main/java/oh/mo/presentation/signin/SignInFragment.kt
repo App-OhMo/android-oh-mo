@@ -4,14 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
-import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -22,6 +23,7 @@ import oh.mo.presentation.base.BaseFragment
 import oh.mo.utils.textChangesToFlow
 import kotlin.coroutines.CoroutineContext
 
+@AndroidEntryPoint
 class SignInFragment : BaseFragment<FragmentSignInBinding>() {
 
     private val viewModel: SignInViewModel by viewModels()
@@ -43,30 +45,48 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initFunctions()
+        initFlowFunctions()
+        initCoroutineScope()
     }
 
     private fun initFunctions() {
         binding.apply {
+            tvSignin.isEnabled = false
+
             tvSignin.setOnClickListener {
-                it.findNavController().navigate(R.id.action_signin_to_main)
-                requireActivity().finish()
+                viewModel.postUserSignIn(
+                    email = etSigninEmail.text.toString(),
+                    password = etSigninPassword.text.toString(),
+                    toastMsg = { string ->
+                        Toast.makeText(requireContext(), string, Toast.LENGTH_SHORT).show()
+                    },
+                    exit = {
+                        it.findNavController().navigate(R.id.action_signin_to_main)
+                        requireActivity().finish()
+                    }
+                )
             }
 
             tvSigninPasswordSearch.setOnClickListener {
                 it.findNavController().navigate(R.id.action_signin_to_password_assistance)
             }
+        }
+    }
 
-            tvSignin.isEnabled = false
-
-            lifecycleScope.launchWhenStarted {
+    private fun initFlowFunctions() {
+        binding.apply {
+            lifecycleScope.launch {
                 viewModel.isBtnEnabled.collect {
                     tvSignin.isEnabled = it[0] && it[1]
                 }
             }
+        }
+    }
 
+    private fun initCoroutineScope() {
+        binding.apply {
             CoroutineScope(IO).launch(myCoroutineContext) {
                 etSigninEmail.textChangesToFlow()
-                    .debounce(1500)
                     .filter {
                         it?.length!! > 0
                     }
@@ -77,34 +97,35 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
                             ) {
                                 tvSigninWrongEmailFormat.visibility = View.GONE
                                 isEmailValid = true
-                                viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
                             } else {
                                 tvSigninWrongEmailFormat.visibility = View.VISIBLE
                                 isEmailValid = false
-                                viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
                             }
+
+                            setBtnEnabled()
                         }
                     }
                     .launchIn(this)
 
                 etSigninPassword.textChangesToFlow()
                     .onEach {
-                        if (it?.length!! == 0) {
-                            isPasswordValid = false
-                            viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
-                        } else {
-                            isPasswordValid = true
-                            viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
-                        }
+                        isPasswordValid = it?.length!! != 0
+                        setBtnEnabled()
                     }
                     .launchIn(this)
             }
         }
     }
 
+    private fun setBtnEnabled() {
+        viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
+    }
+
     override fun onDestroy() {
-        myCoroutineContext.cancel()
         super.onDestroy()
+        myCoroutineContext.cancel()
     }
 }
+
+
 

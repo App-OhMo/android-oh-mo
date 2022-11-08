@@ -21,7 +21,15 @@
     <!-- SignUp Fragment -->
     <string name="nickname">닉네임</string>
     <string name="duplicate_check"><u>중복확인</u></string>
+    <string name="nickname_length_error">닉네임은 8자 이내로 설정 가능합니다.</string>
+    <string name="nickname_duplicated">중복된 닉네임입니다. 다른 닉네임으로 변경해주세요.</string>
+    <string name="nickname_available">사용 가능한 닉네임입니다.</string>
+
     <string name="password_rules">비밀번호는 영문, 숫자(특수문자 포함) 8자 이상으로 설정 가능합니다.</string>
+    <string name="password_validation">서식에 맞지 않는 비밀번호입니다.</string>
+
+    <string name="email_duplicated">이미 등록된 이메일입니다.</string>
+    <string name="email_available">사용 가능한 이메일입니다.</string>
 
     <!-- PasswordAssistance Fragment -->
     <string name="password_assistance_title">등록된 이메일로 찾기</string>

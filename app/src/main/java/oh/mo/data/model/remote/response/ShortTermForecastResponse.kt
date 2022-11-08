@@ -1,4 +1,4 @@
-package oh.mo.data.model
+package oh.mo.data.model.remote.response
 
 data class ShortTermForecastResponse(
     val response: Response?
