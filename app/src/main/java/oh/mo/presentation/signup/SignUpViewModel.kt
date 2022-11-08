@@ -55,12 +55,11 @@ class SignUpViewModel @Inject constructor(
                     )
                 )
             }.onSuccess {
-                Log.d("test", it.toString())
                 toastMsg(it.responseMessage)
                 exit()
             }.onFailure {
                 toastMsg("회원가입 실패")
-                Log.d("test", it.toString())
+                Log.d("userSignUp Failed", it.toString())
             }
         }
     }
@@ -72,7 +71,7 @@ class SignUpViewModel @Inject constructor(
             }.onSuccess {
                 _isNicknameValid.emit(it)
             }.onFailure {
-                Log.d("test", it.toString())
+                Log.d("isNicknameDuplicated Failed", it.toString())
             }
         }
     }
@@ -84,7 +83,7 @@ class SignUpViewModel @Inject constructor(
             }.onSuccess {
                 _isEmailValid.emit(it)
             }.onFailure {
-                Log.d("test", it.toString())
+                Log.d("isEmailDuplicated Failed", it.toString())
             }
         }
     }

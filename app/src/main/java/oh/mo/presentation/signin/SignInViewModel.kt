@@ -45,6 +45,7 @@ class SignInViewModel @Inject constructor(
                 exit()
             }.onFailure {
                 toastMsg("로그인 실패")
+                Log.d("userSignIn Failed", it.toString())
             }
         }
     }

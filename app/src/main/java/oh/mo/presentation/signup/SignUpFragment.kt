@@ -85,33 +85,31 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>() {
         binding.apply {
             lifecycleScope.launch {
                 viewModel.isNicknameValid.collect {
-                    if (!it) {
+                    isNicknameValid = if (!it) {
                         setVisibilityByValidation("availableNickname")
-                        isNicknameValid = true
-                        nickname = etSignupNickname.text.toString()
-                        setBtnEnabled()
+                        true
                     } else {
                         setVisibilityByValidation("duplicatedNickname")
-                        isNicknameValid = false
-                        nickname = etSignupNickname.text.toString()
-                        setBtnEnabled()
+                        false
                     }
+
+                    nickname = etSignupNickname.text.toString()
+                    setBtnEnabled()
                 }
             }
 
             lifecycleScope.launch {
                 viewModel.isEmailValid.collect {
-                    if (!it) {
+                    isEmailValid = if (!it) {
                         setVisibilityByValidation("availableEmail")
-                        isEmailValid = true
-                        email = etSignupEmail.text.toString()
-                        setBtnEnabled()
+                        true
                     } else {
                         setVisibilityByValidation("duplicatedEmail")
-                        isEmailValid = false
-                        email = etSignupEmail.text.toString()
-                        setBtnEnabled()
+                        false
                     }
+
+                    email = etSignupEmail.text.toString()
+                    setBtnEnabled()
                 }
             }
 

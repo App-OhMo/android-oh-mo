@@ -13,7 +13,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancel
-import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -88,7 +87,6 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
         binding.apply {
             CoroutineScope(IO).launch(myCoroutineContext) {
                 etSigninEmail.textChangesToFlow()
-                    .debounce(1500)
                     .filter {
                         it?.length!! > 0
                     }
@@ -99,35 +97,35 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
                             ) {
                                 tvSigninWrongEmailFormat.visibility = View.GONE
                                 isEmailValid = true
-                                viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
                             } else {
                                 tvSigninWrongEmailFormat.visibility = View.VISIBLE
                                 isEmailValid = false
-                                viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
                             }
+
+                            setBtnEnabled()
                         }
                     }
                     .launchIn(this)
 
                 etSigninPassword.textChangesToFlow()
                     .onEach {
-                        if (it?.length!! == 0) {
-                            isPasswordValid = false
-                            viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
-                        } else {
-                            isPasswordValid = true
-                            viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
-                        }
+                        isPasswordValid = it?.length!! != 0
+                        setBtnEnabled()
                     }
                     .launchIn(this)
             }
         }
     }
 
+    private fun setBtnEnabled() {
+        viewModel.setBtnEnabled(isEmailValid, isPasswordValid)
+    }
 
     override fun onDestroy() {
-        myCoroutineContext.cancel()
         super.onDestroy()
+        myCoroutineContext.cancel()
     }
 }
+
+
 
