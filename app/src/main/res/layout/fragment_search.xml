@@ -17,10 +17,13 @@
         android:background="@color/blue_64">
 
         <EditText
+            android:id="@+id/et_search_keyword"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
             android:textSize="14sp"
+            android:singleLine="true"
+            android:drawablePadding="5dp"
             android:hint=" 검색"
             android:drawableLeft="@drawable/search_icon"
             android:textColor="@color/black"
