@@ -16,5 +16,4 @@ interface ShortWeatherApi {
         @Query("nx") nx: Int,
         @Query("ny") ny: Int,
     ): ShortTermForecastResponse
-
 }
