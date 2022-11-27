@@ -30,6 +30,7 @@ class SignInViewModel @Inject constructor(
         email: String,
         password: String,
         toastMsg: (String) -> Unit,
+        saveToken: (String) -> Unit,
         exit: () -> Unit,
     ) {
         viewModelScope.launch {
@@ -42,6 +43,7 @@ class SignInViewModel @Inject constructor(
                 )
             }.onSuccess {
                 toastMsg(it.responseMessage)
+                saveToken(it.data ?: "")
                 exit()
             }.onFailure {
                 toastMsg("로그인 실패")

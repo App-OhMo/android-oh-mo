@@ -20,6 +20,7 @@ import kotlinx.coroutines.launch
 import oh.mo.R
 import oh.mo.databinding.FragmentSignInBinding
 import oh.mo.presentation.base.BaseFragment
+import oh.mo.utils.SharedPrefUtil
 import oh.mo.utils.textChangesToFlow
 import kotlin.coroutines.CoroutineContext
 
@@ -59,6 +60,9 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>() {
                     password = etSigninPassword.text.toString(),
                     toastMsg = { string ->
                         Toast.makeText(requireContext(), string, Toast.LENGTH_SHORT).show()
+                    },
+                    saveToken = { string ->
+                        SharedPrefUtil.setAccessToken(string)
                     },
                     exit = {
                         it.findNavController().navigate(R.id.action_signin_to_main)
