@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.posting.SelectWeatherFragment">
+
+        <TextView
+            android:id="@+id/tv_posting_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="언제 어디에서 이 옷을 입었나요?"
+            android:textColor="@color/blue_4e"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_posting_sunny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="39dp"
+            android:drawableTop="@drawable/home_sunny_icon_unselected"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/one_mobile_title"
+            android:text="맑음"
+            android:textColor="@color/grey_ae"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:layout_marginStart="40dp"
+            app:layout_constraintEnd_toStartOf="@id/tv_posting_cloud"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_posting_description" />
+
+        <TextView
+            android:id="@+id/tv_posting_cloud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/home_cloudy_icon_unselected"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/one_mobile_title"
+            android:text="흐림"
+            android:textColor="@color/grey_ae"
+            android:textSize="12sp"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@id/tv_posting_rainy"
+            app:layout_constraintStart_toEndOf="@id/tv_posting_sunny"
+            app:layout_constraintBottom_toBottomOf="@id/tv_posting_sunny" />
+
+        <TextView
+            android:id="@+id/tv_posting_rainy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/home_rainy_icon_unselected"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/one_mobile_title"
+            android:text="비"
+            android:textColor="@color/grey_ae"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/tv_posting_snow"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/tv_posting_cloud"
+            app:layout_constraintBottom_toBottomOf="@id/tv_posting_sunny" />
+
+        <TextView
+            android:id="@+id/tv_posting_snow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/home_snowy_icon_unselected"
+            android:drawablePadding="11dp"
+            android:fontFamily="@font/one_mobile_title"
+            android:text="눈"
+            android:textColor="@color/grey_ae"
+            android:textSize="12sp"
+            android:layout_marginEnd="40dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_posting_rainy"
+            app:layout_constraintBottom_toBottomOf="@id/tv_posting_sunny" />
+
+
+        <TextView
+            android:id="@+id/tv_posting_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="코디날짜"
+            android:fontFamily="@font/one_mobile_title"
+            android:textColor="@color/blue_4e"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_posting_sunny"
+            app:layout_constraintStart_toStartOf="@id/tv_posting_sunny"
+            android:layout_marginTop="31dp" />
+
+        <EditText
+            android:id="@+id/et_posting_month"
+            android:layout_width="39dp"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_e8"
+            app:layout_constraintStart_toEndOf="@id/tv_posting_date"
+            app:layout_constraintTop_toTopOf="@id/tv_posting_date"
+            app:layout_constraintBottom_toBottomOf="@id/tv_posting_date"
+            android:layout_marginStart="32dp"
+            android:textSize="16sp"
+            android:textColor="@color/black_1a"
+            android:fontFamily="@font/pretendard_medium" />
+
+        <TextView
+            android:id="@+id/tv_posting_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_1a"
+            android:textSize="16sp"
+            android:fontFamily="@font/one_mobile_title"
+            android:text="월"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/et_posting_month"
+            app:layout_constraintStart_toEndOf="@id/et_posting_month"
+            app:layout_constraintBottom_toBottomOf="@id/et_posting_month"
+            android:layout_marginStart="4dp" />
+
+        <EditText
+            android:id="@+id/et_posting_day"
+            android:layout_width="39dp"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_e8"
+            app:layout_constraintStart_toEndOf="@id/tv_posting_month"
+            app:layout_constraintTop_toTopOf="@id/tv_posting_date"
+            app:layout_constraintBottom_toBottomOf="@id/tv_posting_date"
+            android:layout_marginStart="11dp"
+            android:textSize="16sp"
+            android:textColor="@color/black_1a"
+            android:fontFamily="@font/pretendard_medium" />
+
+        <TextView
+            android:id="@+id/tv_posting_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_1a"
+            android:textSize="16sp"
+            android:fontFamily="@font/one_mobile_title"
+            android:text="일"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/et_posting_month"
+            app:layout_constraintStart_toEndOf="@id/et_posting_day"
+            app:layout_constraintBottom_toBottomOf="@id/et_posting_month"
+            android:layout_marginStart="4dp" />
+
+
+        <EditText
+            android:id="@+id/et_posting_time"
+            android:layout_width="39dp"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_e8"
+            app:layout_constraintStart_toEndOf="@id/tv_posting_day"
+            app:layout_constraintTop_toTopOf="@id/tv_posting_date"
+            app:layout_constraintBottom_toBottomOf="@id/tv_posting_date"
+            android:layout_marginStart="11dp"
+            android:textSize="16sp"
+            android:textColor="@color/black_1a"
+            android:fontFamily="@font/pretendard_medium" />
+
+        <TextView
+            android:id="@+id/tv_posting_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_1a"
+            android:textSize="16sp"
+            android:fontFamily="@font/one_mobile_title"
+            android:text="시"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/et_posting_month"
+            app:layout_constraintStart_toEndOf="@id/et_posting_time"
+            app:layout_constraintBottom_toBottomOf="@id/et_posting_month"
+            android:layout_marginStart="4dp" />
+
+
+        <TextView
+            android:id="@+id/tv_posting_where"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지역선택"
+            android:fontFamily="@font/one_mobile_title"
+            android:textColor="@color/blue_4e"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_posting_date"
+            app:layout_constraintStart_toStartOf="@id/tv_posting_sunny"
+            android:layout_marginTop="33dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

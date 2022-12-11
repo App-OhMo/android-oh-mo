@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1" />
         <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/drawable/background_home_weather_info.xml" value="0.1" />
         <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.205" />
         <entry key="..\:/Users/DongHwa/AndroidStudioProjects/android-oh-mo/app/src/main/res/drawable/ic_tab_item_rainy.xml" value="0.1" />
@@ -47,9 +48,14 @@
         <entry key="app/src/main/res/drawable/shadow.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_bookmark.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_coordi_chip.xml" value="0.15802154682431646" />
+        <entry key="app/src/main/res/layout/fragment_coordi_content.xml" value="0.1056533827618165" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_posting.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_select_weather.xml" value="0.1111111111111111" />
         <entry key="app/src/main/res/layout/nav_main.xml" value="0.22777777777777777" />
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.22777777777777777" />
       </map>

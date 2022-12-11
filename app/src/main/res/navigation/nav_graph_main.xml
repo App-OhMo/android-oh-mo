@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_home_to_search"
             app:destination="@id/fragment_search" />
+        <action
+            android:id="@+id/action_home_to_posting"
+            app:destination="@id/fragment_posting" />
     </fragment>
 
     <fragment
@@ -40,5 +43,11 @@
         android:name="oh.mo.presentation.search.SearchFragment"
         android:label="Search"
         tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/fragment_posting"
+        android:name="oh.mo.presentation.posting.PostingFragment"
+        android:label="Posting"
+        tools:layout="@layout/fragment_posting" />
 
 </navigation>

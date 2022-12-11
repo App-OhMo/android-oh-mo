@@ -4,9 +4,8 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import androidx.activity.viewModels
-import androidx.core.view.isGone
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,25 +36,47 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
             when(dest.id) {
                 R.id.fragment_profile -> {
                     binding.tbMain.apply {
-                        window.statusBarColor = resources.getColor(R.color.white);
                         title = "프로필"
-                        setTitleTextColor(resources.getColor(R.color.black_1a))
-                        setBackgroundColor(resources.getColor(R.color.white))
-                        binding.tbMain.visibility = View.VISIBLE
-                        binding.navBar.visibility = View.VISIBLE
+                        setWhiteToolBar()
+                        visibleNav(true)
                     }
                 }
                 R.id.fragment_home -> {
                     binding.tbMain.apply {
-                        window.statusBarColor = resources.getColor(R.color.blue_64);
                         title = "오늘의 날씨"
-                        setTitleTextColor(resources.getColor(R.color.white))
-                        setBackgroundColor(resources.getColor(R.color.blue_64))
-                        binding.tbMain.visibility = View.VISIBLE
-                        binding.navBar.visibility = View.VISIBLE
+                        setBlueToolBar()
+                        visibleNav(true)
+                    }
+                }
+                R.id.fragment_posting -> {
+                    binding.tbMain.apply {
+                        setWhiteToolBar()
+                        visibleNav(false)
                     }
                 }
             }
+        }
+    }
+
+    private fun Toolbar.setBlueToolBar() {
+        window.statusBarColor = resources.getColor(R.color.blue_64);
+        this.setTitleTextColor(resources.getColor(R.color.white))
+        this.setBackgroundColor(resources.getColor(R.color.blue_64))
+    }
+
+    private fun Toolbar.setWhiteToolBar() {
+        window.statusBarColor = resources.getColor(R.color.white);
+        this.setTitleTextColor(resources.getColor(R.color.black_1a))
+        this.setBackgroundColor(resources.getColor(R.color.white))
+    }
+
+    private fun visibleNav(visible: Boolean) {
+        if(visible) {
+            binding.tbMain.visibility = View.VISIBLE
+            binding.navBar.visibility = View.VISIBLE
+        } else {
+            binding.tbMain.visibility = View.VISIBLE
+            binding.navBar.visibility = View.GONE
         }
     }
 
@@ -67,7 +88,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
         }
 
         binding.ivHomePosting.setOnClickListener() {
-            //포스팅 아이콘 로직
+            navController.navigate(R.id.action_home_to_posting)
+            binding.tbMain.visibility = View.GONE
+            binding.navBar.visibility = View.GONE
         }
     }
 
